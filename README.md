@@ -14,6 +14,11 @@ This project implements an object detection system using the YOLO (You Only Look
 
 ---
 
+## Output
+![Imange](Extra%20Files/screenshot.png)
+
+---
+
 ## Project Structure
 ```
 Number Plate Recg/
