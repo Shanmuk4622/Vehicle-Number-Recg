@@ -8,7 +8,7 @@ from datetime import datetime
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-model = YOLO('../../object-detection-project/best.pt')
+model = YOLO('../weights/best.pt')
 
 
 def RGB(event, x, y, flags, param):
@@ -20,9 +20,10 @@ def RGB(event, x, y, flags, param):
 cv2.namedWindow('RGB')
 cv2.setMouseCallback('RGB', RGB)
 
-cap = cv2.VideoCapture('video1.mp4')
+Video_path = "../data/video1.mp4"
+cap = cv2.VideoCapture(Video_path)
 
-my_file = open("../../object-detection-project/coco1.txt", "r")
+my_file = open("../data/coco1.txt", "r")
 data = my_file.read()
 class_list = data.split("\n")
 
@@ -33,7 +34,7 @@ list1 = []
 processed_numbers = set()
 
 # Open file for writing car plate data
-with open("../../object-detection-project/car_plate_data.txt", "a") as file:
+with open("../data/car_plate_data.txt", "a") as file:
     file.write("NumberPlate\tDate\tTime\n")  # Writing column headers
 x=""
 

@@ -8,15 +8,15 @@ from datetime import datetime
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-model = YOLO('../../object-detection-project/best.pt')
+model = YOLO('../weights/best.pt')
 
 # Load the image
-image_path = '../../object-detection-project/04.jpg'  # Replace with your image file path
+image_path = '../data/04.jpg'  # Replace with your image file path
 frame = cv2.imread(image_path)
 frame = cv2.resize(frame, (1020, 500))
 
 # Load class list
-my_file = open("../../object-detection-project/coco1.txt", "r")
+my_file = open("../data/coco1.txt", "r")
 data = my_file.read()
 class_list = data.split("\n")
 
@@ -27,7 +27,7 @@ area = [(27, 350), (16, 500), (1015, 400), (992, 350)]
 processed_numbers = set()
 
 # Open file for writing car plate data
-with open("../../object-detection-project/car_plate_data.txt", "a") as file:
+with open("../data/car_plate_data.txt", "a") as file:
     file.write("NumberPlate\tDate\tTime\n")  # Writing column headers
 
 # Function to display mouse position
@@ -68,7 +68,7 @@ for index, row in px.iterrows():
         if text not in processed_numbers:
             processed_numbers.add(text)
             current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            with open("../../object-detection-project/car_plate_data.txt", "a") as file:
+            with open("../data/car_plate_data.txt", "a") as file:
                 file.write(f"{text}\t{current_datetime}\n")
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 1)
 
