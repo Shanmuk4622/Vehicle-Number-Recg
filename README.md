@@ -3,6 +3,12 @@
 ## Overview
 This project implements an object detection system using the YOLO (You Only Look Once) model to detect car license plates from images and video feeds. The system is designed to be modular, with separate components for file operations, mouse event handling, video processing, and model management. The detected license plates are saved along with timestamps for further analysis.
 
+## Demo Video
+Watch the demo video on YouTube to see the system in action:
+
+[![ Demo](https://img.youtube.com/vi/7eUguLniYec/0.jpg)](https://youtu.be/7eUguLniYec)
+
+
 ---
 
 ## Features

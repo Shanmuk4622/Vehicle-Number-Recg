@@ -1,5 +1,5 @@
 TESSERACT_CMD = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-MODEL_PATH = 'weights/bestOld.pt'
+MODEL_PATH = 'weights/best.pt'
 VIDEO_PATH = 'data/video1.mp4'
 OUTPUT_FILE = 'data/car_plate_data.txt'
 
